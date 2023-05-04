@@ -1,0 +1,41 @@
+footer {
+    background-color: $footer_color;
+    font-family: $font_text;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 22px 25px;
+
+    .footer__p {
+        font-family: $font_logo-title;
+        color: $bg_color;
+        font-size: 18px;
+        padding-bottom: 16px;
+    }
+
+    .footer__ul {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .footer__div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+        .fa-utensils {
+            padding-right: 11px;
+        }
+
+        .fa-handshake-angle {
+            padding-right: 6px;
+        }
+
+}
+
+a {
+    color: white;
+}
