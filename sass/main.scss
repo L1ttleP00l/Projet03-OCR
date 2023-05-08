@@ -17,12 +17,16 @@
 
 
 // 04. COMPONENTS : contient les blocs BEM indépendants comme les boutons
+@import "./components/icon";
 @import "./components/button";
 @import "./components/loader";
 
 
+
 // 05. LAYOUTS : contient les blocs BEM qui contiennent ce qui est réutilisable,
 // par exemple un header pour les mises en page de grande taille ou un footer
+@import "./layouts/body";
+@import "./layouts/main";
 @import "./layouts/footer";
 @import "./layouts/grid";
 @import "./layouts/header";
