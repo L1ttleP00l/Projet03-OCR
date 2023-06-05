@@ -1,0 +1,129 @@
+.wallpaper {
+    height: 275px;
+    object-fit: cover;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: -50px;
+    padding: 32px 13px 40px 13px;
+    gap: 40px;
+    background-color: $bg_color;
+
+    &__title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 27px;
+        padding: 0px 4px 2px 4px;
+
+        & p {
+            font-family: $font_logo-title;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 28px;
+        }
+
+        & span {
+            margin-top: 4px;
+            position: relative;
+            height: 24px;
+            width: 24px;
+            @include heart;
+        }
+    }
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+
+    &__title {
+        width: 100%;
+
+        & p {
+            border-bottom: 3px solid $tertiary_color;
+            padding-bottom: 6px;
+            width: 40px;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+
+        .section-card {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            height: 69px;
+            box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
+            border-radius: 15.0431px;
+            padding: 12px 15px;
+            background-color: white;
+
+            .selection {
+                display: none;
+            }
+
+            &:hover {
+                cursor: pointer;
+                color: red;
+            }
+
+            & div {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                // mask:linear-gradient(90deg, black 0, black 90%, transparent 100%) alpha;
+                // -webkit-mask:linear-gradient(90deg, black 0, black 90%, transparent 100%);
+
+                .section-card__title {
+                    // white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    padding-bottom: 5px;
+                }
+    
+                .section-card__description {
+                    // white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-family: $font_text;
+                    font-size: 0.94rem;
+                    font-weight: 300;
+                }
+            }
+
+            .section-card__price {
+                font-family: $font_text;
+                font-weight: 700;
+                font-size: 0.94rem;
+                height: 90%;
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+            }
+
+        }
+        
+    }
+
+    .validation__button {
+        width: 186px;
+        @include button;
+    }
+
+}
