@@ -1,13 +1,42 @@
-@mixin for-phone-only {
+@mixin smartphone {
     @media (max-width: 599px) { @content; }
  }
  
- @mixin for-tablet-portrait-up {
+ @mixin tablet {
     @media (min-width: 600px) and (max-width: 1025px) {
        @content; 
     }
  }
  
- @mixin for-desktop-up {
+ @mixin desktop {
     @media (min-width: 1500px) { @content; }
  }
+
+ // Icône "Favoris"
+@mixin heart {
+   .fa-heart {
+       cursor: pointer;
+       position: absolute;
+       height: 24px;
+       width: 24px;
+       padding-top: 10px;
+       color: black;
+       transition: all 500ms ease-in-out;
+   }
+
+   .fa-solid {
+       color: transparent;
+       opacity: 0;
+       background: $gradient_color;
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+       -moz-background-clip: text;
+       -moz-text-fill-color: transparent;
+   }
+
+   &:hover {
+       .fa-solid {
+           opacity: 1;
+       }
+   }
+}

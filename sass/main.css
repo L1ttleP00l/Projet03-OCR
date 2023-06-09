@@ -50,6 +50,10 @@ a {
   text-decoration: none;
 }
 
+a {
+  color: white;
+}
+
 h2 {
   font-weight: 700;
   font-size: 1.5rem;
@@ -91,7 +95,7 @@ h5 {
   height: 29px;
   position: absolute;
   margin-top: 12px;
-  right: 25px;
+  right: 12px;
   border-radius: 2px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
   color: #008766;
@@ -124,13 +128,54 @@ h5 {
 }
 
 .loader {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #F6F6F6;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100vh;
+  inset: 0;
+  position: fixed;
+  background: white;
+  z-index: 10000;
+  animation: stop-circle-spin 1s 3s forwards;
+}
+.loader__circle {
+  display: inline-block;
+  width: 50;
+  height: 50;
+  border: 0.938rem solid #9356DC;
+  border-radius: 50%;
+  animation: loader-circle-spin 2s ease-in-out infinite;
+}
+@keyframes loader-circle-spin {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  25% {
+    border: 0.938rem solid #FF79DA;
+  }
+  50% {
+    border: 1.5rem solid #9356DC;
+    transform: scale(1);
+    opacity: 1;
+  }
+  75% {
+    border: 0.938rem solid #99E2D0;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes stop-circle-spin {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -10000;
+  }
 }
 
 main {
@@ -148,6 +193,12 @@ main {
   background-color: #EAEAEA;
   height: 50px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15) inset;
+  width: 100%;
+}
+@media (min-width: 1500px) {
+  .lieu {
+    box-shadow: none;
+  }
 }
 .lieu__container {
   display: flex;
@@ -163,7 +214,14 @@ main {
 .reservation {
   display: flex;
   flex-direction: column;
-  padding: 39.5px 20px 57px 20px;
+  padding: 2.469rem 1.25rem 3.563rem 1.25rem;
+  width: 100%;
+  background-color: #F6F6F6;
+}
+@media (min-width: 1500px) {
+  .reservation {
+    padding: 1.875rem 24.844rem;
+  }
 }
 .reservation__container {
   display: flex;
@@ -174,8 +232,15 @@ main {
 .reservation__container .reservation__title {
   font-weight: 700;
   font-size: 1.5rem;
-  padding: 0px 42px 10px 42px;
+  padding: 0px 42px 15px 42px;
   text-align: center;
+}
+@media (min-width: 1500px) {
+  .reservation__container .reservation__title {
+    font-size: 2.5rem;
+    padding: 0;
+    padding-bottom: 30px;
+  }
 }
 .reservation__container .reservation__text {
   font-weight: 300;
@@ -205,28 +270,48 @@ main {
   background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
-  padding: 48px 20px 68px 20px;
-  gap: 26px;
+  padding: 3rem 1.25rem 4.25rem 1.25rem;
+  gap: 1.5rem;
 }
-.fonctionnement .fonctionnement__container {
+@media (min-width: 1500px) {
+  .fonctionnement {
+    align-items: center;
+    padding-top: 3.125rem;
+    padding-bottom: 3.125rem;
+  }
+}
+.fonctionnement > div > h2 {
+  padding-bottom: 1.875rem;
+}
+.fonctionnement > div .fonctionnement__container {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 1.5rem;
 }
-.fonctionnement .fonctionnement__card {
+@media (min-width: 1500px) {
+  .fonctionnement > div .fonctionnement__container {
+    flex-direction: row;
+  }
+}
+.fonctionnement > div .fonctionnement__container .fonctionnement__card {
   height: 72.38px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.fonctionnement .fonctionnement__card:hover {
+@media (min-width: 1500px) {
+  .fonctionnement > div .fonctionnement__container .fonctionnement__card {
+    width: 350px;
+  }
+}
+.fonctionnement > div .fonctionnement__container .fonctionnement__card:hover {
   color: #9356DC;
   cursor: pointer;
 }
-.fonctionnement .fonctionnement__card:hover .fa-solid {
+.fonctionnement > div .fonctionnement__container .fonctionnement__card:hover .fa-solid {
   color: #9356DC;
 }
-.fonctionnement .fonctionnement__card .fonctionnement__card__number {
+.fonctionnement > div .fonctionnement__container .fonctionnement__card .fonctionnement__card__number {
   background-color: #9356DC;
   color: #F6F6F6;
   font-weight: 500;
@@ -239,7 +324,7 @@ main {
   position: absolute;
   margin: 26.86px 0px 21.52px 0px;
 }
-.fonctionnement .fonctionnement__card .fonctionnement__card__content {
+.fonctionnement > div .fonctionnement__container .fonctionnement__card .fonctionnement__card__content {
   width: 100%;
   height: 100%;
   gap: 23px;
@@ -258,29 +343,59 @@ main {
   background-color: #F6F6F6;
   display: flex;
   flex-direction: column;
-  padding: 54px 14px 66px 15px;
-  gap: 22px;
+  padding: 3.375rem 0.875rem 4.125rem 0.938rem;
+  gap: 1.375rem;
+  width: 100%;
 }
-.restaurant .restaurant__container {
+@media (min-width: 1500px) {
+  .restaurant {
+    align-items: center;
+    padding-top: 1.875rem;
+    padding-bottom: 1.875rem;
+  }
+}
+@media (min-width: 1500px) {
+  .restaurant > div {
+    width: 1098px;
+  }
+}
+.restaurant > div > h2 {
+  padding-bottom: 1.875rem;
+}
+.restaurant > div .restaurant__container {
   display: flex;
   flex-direction: column;
-  gap: 21px;
+  gap: 1.313rem;
 }
-.restaurant .restaurant__card {
+@media (min-width: 1500px) {
+  .restaurant > div .restaurant__container {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 3.563rem;
+  }
+}
+.restaurant > div .restaurant__card {
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  position: relative;
   background-color: #FFFFFF;
 }
-.restaurant .restaurant__card .restaurant__card__img {
+@media (min-width: 1500px) {
+  .restaurant > div .restaurant__card {
+    width: 499px;
+  }
+}
+.restaurant > div .restaurant__card .restaurant__card__img {
   width: 100%;
   height: 174px;
   object-fit: cover;
   border-radius: 15px 15px 0px 0px;
 }
-.restaurant .restaurant__card .restaurant__card__content {
+.restaurant > div .restaurant__card .restaurant__card__content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -289,24 +404,24 @@ main {
   border-radius: 0px 0px 15px 15px;
   padding: 16px 25px 12px 13px;
 }
-.restaurant .restaurant__card .restaurant__card__content div {
+.restaurant > div .restaurant__card .restaurant__card__content div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: black;
   gap: 5px;
 }
-.restaurant .restaurant__card .restaurant__card__content div p {
+.restaurant > div .restaurant__card .restaurant__card__content div p {
   font-weight: 300;
   font-size: 1.063rem;
 }
-.restaurant .restaurant__card .restaurant__card__content span {
+.restaurant > div .restaurant__card .restaurant__card__content span {
   margin-top: 4px;
   position: relative;
   height: 24px;
   width: 24px;
 }
-.restaurant .restaurant__card .restaurant__card__content span .fa-heart {
+.restaurant > div .restaurant__card .restaurant__card__content span .fa-heart {
   cursor: pointer;
   position: absolute;
   height: 24px;
@@ -315,7 +430,7 @@ main {
   color: black;
   transition: all 500ms ease-in-out;
 }
-.restaurant .restaurant__card .restaurant__card__content span .fa-solid {
+.restaurant > div .restaurant__card .restaurant__card__content span .fa-solid {
   color: transparent;
   opacity: 0;
   background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
@@ -324,7 +439,7 @@ main {
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
 }
-.restaurant .restaurant__card .restaurant__card__content span:hover .fa-solid {
+.restaurant > div .restaurant__card .restaurant__card__content span:hover .fa-solid {
   opacity: 1;
 }
 
@@ -335,19 +450,31 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 186px;
   padding: 22px 25px;
+}
+@media (min-width: 1500px) {
+  footer {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 57px 60px 30px 0px;
+  }
 }
 footer .footer__p {
   font-family: "Shrikhand", sans-serif;
   color: #F6F6F6;
   font-size: 18px;
-  padding-bottom: 16px;
 }
 footer .footer__ul {
   display: flex;
   flex-direction: column;
+  padding-top: 16px;
   gap: 7px;
+}
+@media (min-width: 1500px) {
+  footer .footer__ul {
+    flex-direction: row;
+  }
 }
 footer .footer__div {
   display: flex;
@@ -360,9 +487,8 @@ footer .fa-utensils {
 footer .fa-handshake-angle {
   padding-right: 6px;
 }
-
-a {
-  color: white;
+footer li {
+  width: 168px;
 }
 
 header {
@@ -374,9 +500,21 @@ header {
   background-color: #FFFFFF;
 }
 
+@media (min-width: 1500px) {
+  main {
+    background-color: white;
+    align-items: center;
+  }
+}
+
 .wallpaper {
   height: 275px;
   object-fit: cover;
+}
+@media (min-width: 1500px) {
+  .wallpaper {
+    width: 100%;
+  }
 }
 
 .menu {
@@ -391,12 +529,24 @@ header {
   gap: 40px;
   background-color: #F6F6F6;
 }
+@media (min-width: 1500px) {
+  .menu {
+    width: 1100px;
+    align-items: center;
+    padding: 3.188rem 13.125rem 2.5rem 13.125rem;
+  }
+}
 .menu__title {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 27px;
   padding: 0px 4px 2px 4px;
+}
+@media (min-width: 1500px) {
+  .menu__title {
+    gap: 1.5rem;
+  }
 }
 .menu__title p {
   font-family: "Shrikhand", sans-serif;
@@ -439,10 +589,15 @@ header {
   align-items: center;
   gap: 12px;
 }
+@media (min-width: 1500px) {
+  .section {
+    width: 100%;
+  }
+}
 .section__title {
   width: 100%;
 }
-.section__title p {
+.section__title > h5 {
   border-bottom: 3px solid #99E2D0;
   padding-bottom: 6px;
   width: 40px;
@@ -474,7 +629,6 @@ header {
 .section__container .section-card div {
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 .section__container .section-card div .section-card__title {
   overflow: hidden;

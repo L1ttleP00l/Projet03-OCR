@@ -18,7 +18,7 @@
     height: 29px;
     position: absolute;
     margin-top: 12px;
-    right: 25px;
+    right: 12px;
     border-radius: 2px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
     color: $badge_new_text;
@@ -51,32 +51,3 @@
     color: white;
     transition: all 500ms;
 }
-
-// Icône "Favoris"
-@mixin heart {
-    .fa-heart {
-        cursor: pointer;
-        position: absolute;
-        height: 24px;
-        width: 24px;
-        padding-top: 10px;
-        color: black;
-        transition: all 500ms ease-in-out;
-    }
- 
-    .fa-solid {
-        color: transparent;
-        opacity: 0;
-        background: $gradient_color;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -moz-background-clip: text;
-        -moz-text-fill-color: transparent;
-    }
- 
-    &:hover {
-        .fa-solid {
-            opacity: 1;
-        }
-    }
- }

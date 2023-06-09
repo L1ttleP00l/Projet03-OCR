@@ -13,6 +13,10 @@ main {
     background-color: #EAEAEA;
     height: 50px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15) inset;
+    width: 100%;
+    @include desktop {
+        box-shadow: none;
+    }
 
     &__container {
         display: flex;
@@ -30,11 +34,12 @@ main {
 .reservation {
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
-    // height: 252px;
-    // justify-content: center;
-    // margin-top: 39px;
-    padding: 39.5px 20px 57px 20px;
+    padding: 2.469rem 1.25rem 3.563rem 1.25rem;
+    width: 100%;
+    background-color: $bg_color;
+    @include desktop {
+        padding: 1.875rem 24.844rem;
+    }
 
     &__container {
         display: flex;
@@ -45,8 +50,13 @@ main {
         .reservation__title {
             font-weight: 700;
             font-size: 1.5rem;
-            padding: 0px 42px 10px 42px;
+            padding: 0px 42px 15px 42px;
             text-align: center;
+            @include desktop {
+                font-size: 2.5rem;
+                padding: 0;
+                padding-bottom: 30px;
+            }
         }
 
         .reservation__text {
@@ -67,117 +77,161 @@ main {
     background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
-    padding: 48px 20px 68px 20px;
-    gap: 26px;
-
-    .fonctionnement__container {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
+    padding: 3rem 1.25rem 4.25rem 1.25rem;
+    gap: 1.5rem;
+    @include desktop {
+        align-items: center;
+        padding-top: 3.125rem;
+        padding-bottom: 3.125rem;
     }
 
-        .fonctionnement__card {
-            height: 72.38px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+    & > div {
 
-            &:hover {
-                color: $primary_color;
-                cursor: pointer;
-                .fa-solid {
+        & > h2 {
+            padding-bottom: 1.875rem;
+        }
+
+        .fonctionnement__container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            @include desktop {
+                flex-direction: row;
+            }
+    
+            .fonctionnement__card {
+                height: 72.38px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                @include desktop {
+                    width: 350px;
+                }
+    
+                &:hover {
                     color: $primary_color;
+                    cursor: pointer;
+                    .fa-solid {
+                        color: $primary_color;
+                    }
+                }
+    
+                .fonctionnement__card__number {
+                    background-color: $primary_color;
+                    color: $bg_color;
+                    font-weight: 500;
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    margin: 26.86px 0px 21.52px 0px;
+                }
+    
+                .fonctionnement__card__content {
+                    width: 100%;
+                    height: 100%;
+                    gap: 23px;
+                    padding: 0px 38px 0px 35px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: baseline;
+                    align-items: center;
+                    border-radius: 20px;
+                    background-color: $bg_color;
+                    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+                    margin-left: 12px;
                 }
             }
-
-            .fonctionnement__card__number {
-                background-color: $primary_color;
-                color: $bg_color;
-                font-weight: 500;
-                width: 24px;
-                height: 24px;
-                border-radius: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                position: absolute;
-                margin: 26.86px 0px 21.52px 0px;
-            }
-
-            .fonctionnement__card__content {
-                width: 100%;
-                height: 100%;
-                gap: 23px;
-                padding: 0px 38px 0px 35px;
-                display: flex;
-                flex-direction: row;
-                justify-content: baseline;
-                align-items: center;
-                border-radius: 20px;
-                background-color: $bg_color;
-                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-                margin-left: 12px;
-            }
         }
+    }
 }
 
 .restaurant {
     background-color: $bg_color;
     display: flex;
     flex-direction: column;
-    padding: 54px 14px 66px 15px;
-    gap: 22px;
-
-    .restaurant__container {
-        display: flex;
-        flex-direction: column;
-        gap: 21px;
+    padding: 3.375rem 0.875rem 4.125rem 0.938rem;
+    gap: 1.375rem;
+    width: 100%;
+    @include desktop {
+        align-items: center;
+        padding-top: 1.875rem;
+        padding-bottom: 1.875rem;
     }
 
-    .restaurant__card {
-        border-radius: 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #FFFFFF;
-
-        .restaurant__card__img {
-            width: 100%;
-            height: 174px;
-            object-fit: cover;
-            // object-position: 0% 61.5%;
-            border-radius: 15px 15px 0px 0px;
+    & > div {
+        @include desktop {
+            width: 1098px;
         }
 
-        .restaurant__card__content {
+        & > h2 {
+            padding-bottom: 1.875rem;
+        }
+
+        .restaurant__container {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+            gap: 1.313rem;
+            @include desktop {
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 3.563rem;
+            }
+        }
+
+        .restaurant__card {
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
             justify-content: space-between;
-            width: 100%;
-            height: 77px;
-            border-radius: 0px 0px 15px 15px;
-            padding: 16px 25px 12px 13px;
-
-            & div {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                color: black;
-                gap: 5px;
-
-                & p {
-                    font-weight: 300;
-                    font-size: 1.063rem;
-                }
+            align-items: center;
+            position: relative;
+            background-color: #FFFFFF;
+            @include desktop {
+                width: 499px;
             }
 
-            & span {
-                margin-top: 4px;
-                position: relative;
-                height: 24px;
-                width: 24px;
-                @include heart;
+            .restaurant__card__img {
+                width: 100%;
+                height: 174px;
+                object-fit: cover;
+                border-radius: 15px 15px 0px 0px;
+
+            }
+
+            .restaurant__card__content {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                height: 77px;
+                border-radius: 0px 0px 15px 15px;
+                padding: 16px 25px 12px 13px;
+
+                & div {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    color: black;
+                    gap: 5px;
+
+                    & p {
+                        font-weight: 300;
+                        font-size: 1.063rem;
+                    }
+                }
+
+                & span {
+                    margin-top: 4px;
+                    position: relative;
+                    height: 24px;
+                    width: 24px;
+                    @include heart;
+                }
             }
         }
     }

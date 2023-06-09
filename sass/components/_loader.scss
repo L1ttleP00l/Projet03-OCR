@@ -1,9 +1,53 @@
 .loader {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: $bg_color;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+    inset: 0;
+    position: fixed;
+    background: #ffff;
+    z-index: 10000;
+    animation: stop-circle-spin 1s 3s forwards;
+
+    &__circle {
+        display: inline-block;
+        width: 50;
+        height: 50;
+        border: 0.938rem solid $primary_color;
+        border-radius: 50%;
+        animation: loader-circle-spin 2s ease-in-out infinite;
+    }
+    
+    @keyframes loader-circle-spin {
+        0% {
+            transform: scale(0);
+            opacity: 0;
+        }
+        25% {
+            border: 0.938rem solid $secondary_color;
+        }
+        50% {
+            border: 1.5rem solid $primary_color;
+            transform: scale(1);
+            opacity: 1;
+        }
+        75% {
+            border: 0.938rem solid $tertiary_color;
+        }
+        100% {
+            transform: scale(0);
+            opacity: 0;
+        }
+    }
+
+    @keyframes stop-circle-spin {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            z-index: -10000;
+        }
+    }
 }
