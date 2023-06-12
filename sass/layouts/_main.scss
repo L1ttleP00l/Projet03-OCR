@@ -67,6 +67,7 @@ main {
         }
 
         .reservation__button {
+            margin-top: 27px;
             width: 218px;
             @include button;
         }
@@ -191,6 +192,13 @@ main {
             align-items: center;
             position: relative;
             background-color: #FFFFFF;
+            transition: all 500ms;
+
+            &:hover {
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+                transition: all 500ms;
+            }
+
             @include desktop {
                 width: 499px;
             }

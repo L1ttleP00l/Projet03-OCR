@@ -35,7 +35,7 @@
 }
 
 // Menu "Sélection"
-.selection::after {
+.check::after {
     content: "\f058";
     font: var(--fa-font-solid);
     display: flex;
@@ -44,10 +44,8 @@
     background-color: $tertiary_color;
     width: 59px;
     height: 69px;
-    position: absolute;
-    left: 303px;
+    margin-bottom: 1px;
+    left: 48%;
     border-radius: 0px 15px 15px 0px;
-    // box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
     color: white;
-    transition: all 500ms;
 }

@@ -2,6 +2,7 @@
 @import "./utils/functions";
 @import "./utils/mixins";
 @import "./utils/variables";
+@import "./utils/animations";
 
 
 // 02. VENDORS : contient des feuilles de style externes comme Bootstrap ou jQuery UI.
@@ -40,11 +41,3 @@
 
 // 07. THEMES : contient le code thématique pour personnaliser l'interface
 // @import "./themes/*";
-
-
-
-
-body {
-    background-color: $bg_color;
-    font-family: $font_text;
-}

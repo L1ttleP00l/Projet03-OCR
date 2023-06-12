@@ -17,6 +17,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
@@ -25,8 +26,7 @@ main {
     gap: 40px;
     background-color: $bg_color;
     @include desktop {
-        width: 1100px;
-        align-items: center;
+        max-width: 1100px;
         padding: 3.188rem 13.125rem 2.5rem 13.125rem;
     }
 
@@ -36,9 +36,7 @@ main {
         justify-content: space-between;
         height: 27px;
         padding: 0px 4px 2px 4px;
-        @include desktop {
-            gap: 1.5rem;
-        }
+        gap: 3rem;
 
         & p {
             font-family: $font_logo-title;
@@ -63,9 +61,8 @@ main {
     justify-content: center;
     align-items: center;
     gap: 12px;
-    @include desktop {
-        width: 100%;
-    }
+    margin: 0px 13px;
+    width: 100%;
 
     &__title {
         width: 100%;
@@ -93,21 +90,26 @@ main {
             border-radius: 15.0431px;
             padding: 12px 15px;
             background-color: white;
+            overflow: hidden;
 
-            .selection {
-                display: none;
+            @for $i from 1 through 3 {
+                &:nth-child(#{$i}) {
+                    animation: menu 500ms * $i;
+                }
             }
 
             &:hover {
                 cursor: pointer;
-                color: red;
+                .check {
+                    margin-right: 3.6rem;
+                    transition: all 500ms ease-in-out;
+                }
             }
 
             & div {
                 white-space: nowrap;
                 overflow: hidden;
-                // mask:linear-gradient(90deg, black 0, black 90%, transparent 100%) alpha;
-                // -webkit-mask:linear-gradient(90deg, black 0, black 90%, transparent 100%);
+                transition: all 500ms ease-in-out;
 
                 .section-card__title {
                     overflow: hidden;
@@ -124,23 +126,39 @@ main {
                 }
             }
 
-            .section-card__price {
-                font-family: $font_text;
-                font-weight: 700;
-                font-size: 0.94rem;
-                height: 90%;
+            & span {
                 display: flex;
-                flex-direction: column;
-                justify-content: end;
-            }
+                margin-right: -4.6rem;
+                border-radius: 0px 15.0431px 15.0431px 0px;
+                overflow: hidden;
 
+                .section-card__price {
+                    font-family: $font_text;
+                    font-weight: 700;
+                    font-size: 0.94rem;
+                    padding: 0 13.5px 13.5px 0;
+                    margin-left: 15px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: end;
+                }
+
+                .section-card__check {
+                    background-color: $tertiary_color;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 0px 15.0431px 15.0431px 0px;
+                    width: 3.688rem;
+                    height: 4.313rem;
+                }
+            }
         }
         
     }
+}
 
-    .validation__button {
-        width: 186px;
-        @include button;
-    }
-
+.validation__button {
+    width: 186px;
+    @include button;
 }
