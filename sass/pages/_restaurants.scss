@@ -31,12 +31,16 @@ main {
     }
 
     &__title {
+        width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         height: 27px;
         padding: 0px 4px 2px 4px;
-        gap: 3rem;
+        @include desktop {
+            justify-content: center;
+            gap: 24px;
+        }
 
         & p {
             font-family: $font_logo-title;
@@ -130,14 +134,14 @@ main {
                 display: flex;
                 margin-right: -4.6rem;
                 border-radius: 0px 15.0431px 15.0431px 0px;
-                overflow: hidden;
+                overflow: clip;
 
                 .section-card__price {
                     font-family: $font_text;
                     font-weight: 700;
                     font-size: 0.94rem;
                     padding: 0 13.5px 13.5px 0;
-                    margin-left: 15px;
+                    // margin-left: 15px;
                     display: flex;
                     flex-direction: column;
                     justify-content: end;
