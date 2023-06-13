@@ -95,10 +95,12 @@ main {
             padding: 12px 15px;
             background-color: white;
             overflow: hidden;
+            opacity: 0;
+            animation: menu 1s forwards;
 
-            @for $i from 1 through 3 {
+            @for $i from 1 through 4 {
                 &:nth-child(#{$i}) {
-                    animation: menu 500ms * $i;
+                    animation-delay: 300ms * $i;
                 }
             }
 
@@ -106,7 +108,6 @@ main {
                 cursor: pointer;
                 .check {
                     margin-right: 3.6rem;
-                    transition: all 500ms ease-in-out;
                 }
             }
 
@@ -141,20 +142,9 @@ main {
                     font-weight: 700;
                     font-size: 0.94rem;
                     padding: 0 13.5px 13.5px 0;
-                    // margin-left: 15px;
                     display: flex;
                     flex-direction: column;
                     justify-content: end;
-                }
-
-                .section-card__check {
-                    background-color: $tertiary_color;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    border-radius: 0px 15.0431px 15.0431px 0px;
-                    width: 3.688rem;
-                    height: 4.313rem;
                 }
             }
         }
