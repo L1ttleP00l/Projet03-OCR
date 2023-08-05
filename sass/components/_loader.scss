@@ -2,8 +2,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
-	height: 100vh;
+    // Propriété raccourcie permettant de définir les propriétés top, right, bottom et/ou left
     inset: 0;
     position: fixed;
     background: #ffff;
@@ -11,9 +10,6 @@
     animation: stop-circle-spin 1s 3s forwards;
 
     &__circle {
-        display: inline-block;
-        width: 50;
-        height: 50;
         border: 0.938rem solid $primary_color;
         border-radius: 50%;
         animation: loader-circle-spin 2s ease-in-out infinite;
@@ -25,6 +21,7 @@
             opacity: 0;
         }
         25% {
+            // Propriété raccourcie qui permet de définir les propriétés liées à la bordure. Elle peut être utilisée pour définir les valeurs de border-width, border-style et border-color.
             border: 0.938rem solid $secondary_color;
         }
         50% {

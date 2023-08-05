@@ -6,6 +6,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     padding: 22px 25px;
+    white-space: nowrap;
     @include desktop {
         flex-direction: row-reverse;
         justify-content: flex-start;
@@ -26,14 +27,16 @@ footer {
         gap: 7px;
         @include desktop {
             flex-direction: row;
-            // flex-wrap: nowrap;
+            gap: 14px;
+            margin-right: 50px;
         }
     }
 
-    .footer__div {
+    .footer__li {
         display: flex;
         flex-direction: row;
         align-items: center;
+        width: 100%;
     }
 
         .fa-utensils {
@@ -43,7 +46,7 @@ footer {
         .fa-handshake-angle {
             padding-right: 6px;
         }
-    & li {
-        width: 168px;
-    }
+    // & li {
+    //     width: 168px;
+    // }
 }

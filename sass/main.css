@@ -139,8 +139,6 @@ h5 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100vh;
   inset: 0;
   position: fixed;
   background: white;
@@ -148,9 +146,6 @@ h5 {
   animation: stop-circle-spin 1s 3s forwards;
 }
 .loader__circle {
-  display: inline-block;
-  width: 50;
-  height: 50;
   border: 0.938rem solid #9356DC;
   border-radius: 50%;
   animation: loader-circle-spin 2s ease-in-out infinite;
@@ -354,7 +349,6 @@ main {
   padding: 0px 38px 0px 35px;
   display: flex;
   flex-direction: row;
-  justify-content: baseline;
   align-items: center;
   border-radius: 20px;
   background-color: #F6F6F6;
@@ -479,6 +473,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   padding: 22px 25px;
+  white-space: nowrap;
 }
 @media (min-width: 1500px) {
   footer {
@@ -502,21 +497,21 @@ footer .footer__ul {
 @media (min-width: 1500px) {
   footer .footer__ul {
     flex-direction: row;
+    gap: 14px;
+    margin-right: 50px;
   }
 }
-footer .footer__div {
+footer .footer__li {
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 100%;
 }
 footer .fa-utensils {
   padding-right: 11px;
 }
 footer .fa-handshake-angle {
   padding-right: 6px;
-}
-footer li {
-  width: 168px;
 }
 
 header {
