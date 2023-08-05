@@ -679,13 +679,13 @@ header {
   font-size: 0.94rem;
   font-weight: 300;
 }
-.section__container .section-card span {
+.section__container .section-card div + div {
   display: flex;
   margin-right: -4.6rem;
   border-radius: 0px 15.0431px 15.0431px 0px;
   overflow: clip;
 }
-.section__container .section-card span .section-card__price {
+.section__container .section-card div + div .section-card__price {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 0.94rem;

@@ -131,7 +131,7 @@ main {
                 }
             }
 
-            & span {
+            & div + div {
                 display: flex;
                 margin-right: -4.6rem;
                 border-radius: 0px 15.0431px 15.0431px 0px;
