@@ -1,9 +1,12 @@
 @keyframes menu {
+    // Déplacement de l'élément verticalement
     0% {
+        // Fait démarrer l'élément à 50% de sa position initiale de manière transparente
         transform: translateY(50%);
         opacity: 0;
     }
     100% {
+        // Fait arriver l'élément à sa position initiale
         transform: translateY(0);
         opacity: 1;
     }

@@ -9,10 +9,13 @@
     border: 1px transparent;
     border-radius: 25px;
     padding: 13px 0px;
+    // Génère l'effet de retrait du survol
     transition: 500ms;
 
     &:hover {
+        // Définit la forme du curseur
         cursor: pointer;
+        // Permet de rendre le bouton plus lumineux
         filter: brightness(1.15);
     }
 }

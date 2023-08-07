@@ -96,9 +96,11 @@ main {
             background-color: white;
             overflow: hidden;
             opacity: 0;
+            // Appelle le @keyframes menu pour 1s et retient la dernière étape de la @keyframes menu
             animation: menu 1s forwards;
 
             @for $i from 1 through 4 {
+                // Sélectionne les éléments fils et recalcule le délai de l'animation pour faire apparaître les plats avec un intervalle différent
                 &:nth-child(#{$i}) {
                     animation-delay: 300ms * $i;
                 }
@@ -106,6 +108,7 @@ main {
 
             &:hover {
                 cursor: pointer;
+                // Fait appel 
                 .check {
                     margin-right: 3.6rem;
                 }

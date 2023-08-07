@@ -25,7 +25,7 @@
     font-weight: 500;
     font-size: 0.875rem;
 }
-
+// Flèche de retour sur la page des restaurants
 .fa-arrow-left {
     position: absolute;
     left: 23px;
@@ -36,7 +36,9 @@
 
 // Menu "Sélection"
 .check::after {
+    // Récupère l'icône désirée sur Font Awesome
     content: "\f058";
+    // Applique la propriété "solid" à l'icône
     font: var(--fa-font-solid);
     display: flex;
     justify-content: center;

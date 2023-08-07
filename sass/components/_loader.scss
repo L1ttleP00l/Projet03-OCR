@@ -7,15 +7,19 @@
     position: fixed;
     background: #ffff;
     z-index: 10000;
+    // L'animation fait appel à la @keyframes stop-circle-spin avec une transition d'une seconde, une durée de l'animation de trois secondes et une animation qui commence lentement, accélère puis ralentit à nouveau avant la fin
     animation: stop-circle-spin 1s 3s forwards;
 
     &__circle {
+        // Génération du rond de l'animation
         border: 0.938rem solid $primary_color;
         border-radius: 50%;
+        // L'animation fait appel à la @keyframes loader-circle-spin avec une transition de 2s et une animation qui commence lentement, accélère puis ralentit à nouveau avant la fin de manière infinie
         animation: loader-circle-spin 2s ease-in-out infinite;
     }
     
     @keyframes loader-circle-spin {
+        // Effet d'agrandissement puis de réduction du cercle suivant le pourcentage d'exécution de l'animation et changement des couleurs
         0% {
             transform: scale(0);
             opacity: 0;
@@ -39,6 +43,7 @@
     }
 
     @keyframes stop-circle-spin {
+        // Effet de disparition de la page de chargement et mise en arrière-plan de celle-ci
         0% {
             opacity: 1;
         }
