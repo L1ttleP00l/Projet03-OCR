@@ -108,7 +108,7 @@ main {
 
             &:hover {
                 cursor: pointer;
-                // Fait appel 
+                // Fait coulisser le check de la droite vers la gauche
                 .check {
                     margin-right: 3.6rem;
                 }
@@ -121,12 +121,14 @@ main {
 
                 .section-card__title {
                     overflow: hidden;
+                    // Permet de faire apparaître les trois petits points
                     text-overflow: ellipsis;
                     padding-bottom: 5px;
                 }
     
                 .section-card__description {
                     overflow: hidden;
+                    // Permet de faire apparaître les trois petits points
                     text-overflow: ellipsis;
                     font-family: $font_text;
                     font-size: 0.94rem;
